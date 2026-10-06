@@ -1,0 +1,55 @@
+- type: entity
+  id: NFEnergyPickaxe
+  parent: EnergySword
+  name: holopickaxe
+  description: A holographic mining tool with blades comprised of hard light. Doesn't pack the same punch as an energy weapon, but more compact than most mining tools when turned off.
+  components:
+  - type: ItemToggleSize
+    activatedSize: Huge
+    activatedShape:
+    - 0,0,2,0
+    - 1,1,1,2
+  - type: MeleeWeapon
+    autoAttack: true
+  - type: ItemToggleMeleeWeapon
+    activatedDamage: #esword is 15+15 and this is 10+10
+        types:
+          Heat: 10
+          Piercing: 10
+          Structural: 75
+    deactivatedSecret: true
+  - type: Sprite
+    sprite: _NF/Objects/Weapons/Melee/energy_pickaxe.rsi
+    layers:
+      - state: e-pickaxe
+      - state: e-pickaxe-blade
+        color: "#e95151"
+        visible: false
+        shader: unshaded
+        map: [ "blade" ]
+  - type: Item
+    sprite: _NF/Objects/Weapons/Melee/energy_pickaxe.rsi
+    storedRotation: -45
+  - type: Clothing
+    sprite: _NF/Objects/Weapons/Melee/energy_pickaxe.rsi
+    quickEquip: false
+    slots:
+    - Belt
+    - back
+    - suitStorage
+  - type: ToggleableVisuals
+    spriteLayer: blade
+    inhandVisuals:
+      left:
+      - state: inhand-left-blade
+        shader: unshaded
+      right:
+      - state: inhand-right-blade
+        shader: unshaded
+  - type: Reflect
+    reflectProb: 0.05
+  - type: Tag
+    tags:
+    - Pickaxe
+  - type: StaticPrice
+    price: 200
