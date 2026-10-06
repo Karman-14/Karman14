@@ -1,5 +1,3 @@
-# Overseer's Maul "Honor"
-
 - type: entity
   parent: BaseMeleeWeaponEnergy
   id: WeaponOverseerMace
